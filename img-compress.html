@@ -1,0 +1,89 @@
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #eef1f5;
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    header, footer {
+        background: #2e7d32;
+        color: #fff;
+        text-align: center;
+        padding: 1.2rem 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .container {
+        flex: 1;
+        max-width: 700px;
+        width: 95%;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #222;
+    }
+    input[type="file"] {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    label {
+        font-weight: 600;
+        margin: 15px 0 5px;
+        display: block;
+    }
+    input[type="range"] {
+        width: 100%;
+        margin: 10px 0;
+    }
+    #qualityValue {
+        font-weight: 500;
+    }
+    button {
+        display: inline-block;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+        background: #45a049;
+        transform: translateY(-1px);
+    }
+    .output-img {
+        width: 100%;
+        margin-top: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+    .ad-space {
+        margin: 40px 0 20px;
+        text-align: center;
+    }
+    @media (max-width: 600px) {
+        .container {
+            padding: 20px;
+        }
+        button {
+            width: 100%;
+            font-size: 1.1rem;
+        }
+    }
+</style>
