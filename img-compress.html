@@ -1,89 +1,190 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compress your images online for free. Optimize JPEG and PNG files to speed up your website and improve SEO." />
+  <meta name="keywords" content="image compression, reduce image size, online compressor, image optimizer, web performance, SEO tool" />
+  <meta name="author" content="YourBrand" />
+  <title>Online Image Compression Tool | Fast & Free</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>
+    :root {
+      --primary-color: #0077ff;
+      --bg-color: #f4f6fb;
+      --card-color: #ffffff;
+      --text-color: #333;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
     * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #eef1f5;
-        color: #333;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
     header, footer {
-        background: #2e7d32;
-        color: #fff;
-        text-align: center;
-        padding: 1.2rem 0;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1.2rem 0;
+      box-shadow: var(--shadow);
     }
-    .container {
-        flex: 1;
-        max-width: 700px;
-        width: 95%;
-        margin: 30px auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+    main {
+      flex: 1;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: var(--card-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
     }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
     h2 {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-        text-align: center;
-        color: #222;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--primary-color);
     }
+
+    .tool-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
     input[type="file"] {
-        margin-bottom: 20px;
-        padding: 10px;
+      padding: 10px;
+      border: 2px dashed var(--primary-color);
+      border-radius: 8px;
+      background: #fafafa;
+      cursor: pointer;
+      text-align: center;
     }
+
     label {
-        font-weight: 600;
-        margin: 15px 0 5px;
-        display: block;
+      font-weight: bold;
     }
+
     input[type="range"] {
-        width: 100%;
-        margin: 10px 0;
+      width: 100%;
     }
-    #qualityValue {
-        font-weight: 500;
-    }
+
     button {
-        display: inline-block;
-        background: #4CAF50;
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        margin-top: 10px;
-        transition: background 0.3s ease, transform 0.2s ease;
+      padding: 12px 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
+
     button:hover {
-        background: #45a049;
-        transform: translateY(-1px);
+      background: #005bb5;
     }
+
     .output-img {
-        width: 100%;
-        margin-top: 25px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      margin-top: 20px;
+      max-width: 100%;
+      display: block;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
     }
+
     .ad-space {
-        margin: 40px 0 20px;
-        text-align: center;
+      margin: 30px 0;
+      text-align: center;
     }
+
     @media (max-width: 600px) {
-        .container {
-            padding: 20px;
-        }
-        button {
-            width: 100%;
-            font-size: 1.1rem;
-        }
+      button {
+        width: 100%;
+      }
     }
-</style>
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Image Compression Tool</h1>
+</header>
+
+<main>
+  <h2>Compress & Optimize Your Image</h2>
+  <div class="tool-section">
+    <input type="file" id="imageInput" accept="image/*" />
+
+    <label for="quality">Compression Level:</label>
+    <input type="range" id="quality" min="10" max="100" value="80" />
+    <span id="qualityValue">80%</span>
+
+    <button onclick="compressImage()">Compress Image</button>
+  </div>
+
+  <div class="ad-space">
+    <!-- Google AdSense Placeholder -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <canvas id="canvas" style="display:none;"></canvas>
+  <img id="outputImage" class="output-img" alt="Compressed Image" />
+</main>
+
+<footer>
+  <p>&copy; 2025 YourBrand — Speed up your website with optimized images!</p>
+</footer>
+
+<script>
+  const qualitySlider = document.getElementById('quality');
+  const qualityValue = document.getElementById('qualityValue');
+
+  qualitySlider.addEventListener('input', () => {
+    qualityValue.textContent = `${qualitySlider.value}%`;
+  });
+
+  function compressImage() {
+    const input = document.getElementById('imageInput');
+    const file = input.files[0];
+    if (!file) return alert('Please select an image!');
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        const compressedData = canvas.toDataURL('image/jpeg', qualitySlider.value / 100);
+        document.getElementById('outputImage').src = compressedData;
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+</script>
+
+</body>
+</html>
